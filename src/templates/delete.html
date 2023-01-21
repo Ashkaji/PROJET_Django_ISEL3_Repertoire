@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Suppression d'un contact</h1>
+<form method="POST">
+    {% csrf_token %}
+    <p>Veux-tu supprimer le contact : {{ contact.name }}?</p>
+    <button type="submit" name="cancel" class="btn btn-secondary btn-delete">Annuler</button>
+    <button type="submit" name="delete" class="btn btn-danger btn-delete">Confirmer</button>
+</form>
+
+{% endblock content %}

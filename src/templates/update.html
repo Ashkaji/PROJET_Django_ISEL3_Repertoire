@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Modification d'un contact</h1>
+<form method="POST">
+    {% csrf_token %}
+    <div class="row mb-3">
+        <div class="col-sm-10">
+            <input type="text" name="input-mod-name" class="form-control" value="{{ contact.name }}">
+        </div>
+    </div>
+    <div class="row mb-3">
+        <div class="col-sm-10">
+            <input type="text" name="input-mod-tel" class="form-control" value="{{ contact.tel }}">
+        </div>
+    </div>
+    <button type="submit" name="update" class="btn btn-warning">Mofifier</button>
+</form>
+{% endblock content %}
+
