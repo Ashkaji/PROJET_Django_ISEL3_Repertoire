@@ -3,28 +3,69 @@
 {% block title %} Acceuil {% endblock title %}
 
 {% block content %}
-
-<h1>Répertoire téléphonique</h1>
-
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" class="btn btn-primary" value="AJOUTER">
-    <input type="reset" class="btn btn-primary" value="EFFACER">
-    <input type="button" class="btn btn-secondary form-control" value="Liste des contacts" disabled readonly>
-    {% block listing %}
-    {% for contact in contacts %}
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="{{ contact.name }}" disabled readonly>
-        <a href="{% url 'update' pk=contact.pk %}">
-            <button type="button" class="btn btn-warning btn-modify">Mofifier</button>
-        </a>
-        <a href="{% url 'delete' pk=contact.pk %}">
-            <button type="button" class="btn btn-danger btn-delete">Supprimer</button>
-        </a>
-    </div>
-  {% endfor %}
-  {% endblock listing %}
-</form>
+<div>
+    <h1 style=" display: flex;justify-content: center" >Répertoire téléphonique</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="row ">
+            <div class="col-6 text-left" >
+                <input type="submit" class="btn btn-primary" value="AJOUTER" style="margin-left:35%">
+            </div>
+            <div class="col-6 text-right">
+                <input type="reset" class="btn btn-primary" value="EFFACER" style="margin-left:35%">
+            </div>
+        </div>
+        <br>
+        <div class="row flex-box">
+            <input type="button" class="btn btn-secondary form-control" value="Liste des contacts" disabled readonly>
+        </div>
+        <div class="form-group">
+            <!--{% block listing %}-->
+            <table class="table table-borderless">
+                <thead>
+                    <tr>
+                        <th scope="col">#
+                            <!--<span class="custom-checkbox">
+                              <input type="checkbox" id="selectAll">
+                              <label for="selectAll"></label>
+                            </span>-->
+                        </th>
+                        <th scope="col-md-3">Name</th>
+                        <th scope="col-md-3">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for contact in contacts %}
+                    <tr>
+                        <th scope="row">
+                              <span class="custom-checkbox">
+                                <input type="checkbox" id="checkbox{{ contact.name }}" name="options[]" value="1">
+                                <label for="checkbox1"></label>
+                              </span>
+                        </th>
+                        <td>
+                            <input type="text" class="form-control" placeholder="{{ contact.name }}" disabled readonly>
+                        </td>
+                        <td>
+                            <span>
+                                <a href="{% url 'update' pk=contact.pk %}">
+                                    <button type="button" class="btn btn-warning btn-modify">Modifier</button>
+                                </a>
+                            </span>
+                            <span>
+                                <a href="{% url 'delete' pk=contact.pk %}">
+                                    <button type="button" class="btn btn-danger btn-delete">Supprimer</button>
+                                </a>
+                            </span>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+                <!--{% endblock listing %}-->
+            </table>
+            </div>
+    </form>
+</div>
 
 {% endblock content %}
