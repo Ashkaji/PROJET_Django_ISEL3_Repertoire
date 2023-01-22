@@ -2,7 +2,11 @@
 projet2-Django_ISEL3_Repertoire created by Hounakey
 
 ## Etat du rendu
-Notre version de app.
+Le lien boostrap ajouté au projet est un lien web.
+Il est indispensable de possedez le minimum de connexion pour que l'affichage doit 
+correct.
+
+Notre version de app etc .
 
 ## Fonctionnalités du jeu
 * Implementation 1.
@@ -27,9 +31,17 @@ Notre rendu contient ??  tests contenus dans le package fr/--/--/--
 * Grandes lignes
 #### Ajout de contact (CREATE)
 * explications puis capture d'ecran
+* ![img.png](src/static/images/img.png)
+
 
 #### Modification de contact (UPDATE)
 * explications puis capture d'ecran
+* ![img_1.png](src/static/images/img_1.png)
 
 #### Suppression de contact (Delete)
 * explications puis capture d'ecran
+* ![img_2.png](src/static/images/img_2.png)
+
+#### Affichage des contact
+* explication puis capture
+* ![img_3.png](src/static/images/img_3.png)
