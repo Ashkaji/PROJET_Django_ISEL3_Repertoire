@@ -1,5 +1,5 @@
 # PROJET_Django_ISEL3_Repertoire
-projet2-Django_ISEL3_Repertoire created by Hounakey
+projet2-Django_ISEL3_Repertoire created by Hunnakey K.J. and Kaleb S.
 
 ## Etat du rendu
 Le lien boostrap ajouté au projet est un lien web.
